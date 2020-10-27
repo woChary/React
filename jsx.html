@@ -1,0 +1,43 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+  <div id="root">
+    
+  </div>
+</body>
+</html>
+<script>
+    let number = 0
+
+    render()
+
+    let add = () => {
+        number += 1
+        render()
+    }
+
+    let minus = () => {
+        number -= 1
+        render()
+    }
+
+    function render() {
+        ReactDom.render(
+            <div>
+                <span>{number}</span>
+                <button onClick={add}>+</button>
+                <button onClick={minus}>-</button>
+            </div>,
+            document.querySelector('#root')
+        )
+    }
+
+</script>
+
+</html>
