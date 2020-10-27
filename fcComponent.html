@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.production.min.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.production.min.js"></script>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+</body>
+<script>
+    function App(props) {
+        return (
+            <div>
+                <Box1 name="frank" />
+                <Box2 name="jack" />
+            </div>
+        )
+    }
+
+    class Box1 extends ReactDom.Component {
+        constructor(props) {
+            super(props)
+            this.state = {
+                number: 0
+            }
+        }
+        add() {
+            this.setState({
+                number: this.state.number + 1
+            })
+            render()
+        }
+        minus() {
+            this.setState({
+                number: this.state.number - 1
+            })
+        }
+        render() {
+            return (
+                <div className='red'>
+                    <span>{this.state.number}</span>
+                    <button onClick={this.add.bind(this)}>+</button>
+                    <button onClick={this.minus.bind(this)}>-</button>
+                </div>
+            )
+        }
+    }
+
+    class box2 extends ReactDom.Component {
+        constructor(props) {
+            super(props)
+            this.state = {
+                number: 0
+            }
+        }
+        add() {
+            this.setState({
+                number: this.state.number + 2
+            })
+        }
+        minus() {
+            this.setState({
+                number: this.state.number - 2
+            })
+        }
+        render() {
+            return (
+                <div className="red">
+                    <span>{this.state.number}</span>
+                    <button onClick={this.add.bind(this)}>+2</button>
+                    <button onClick={this.minus.bind(this)}>-2</button>
+                    {this.props.name}
+                </div>
+            )
+        }
+    }
+
+    render()
+
+    function render() {
+        ReactDom.render(
+            <App />,
+            document.querySelector('#root')
+        )
+    }
+</script>
+
+</html>
